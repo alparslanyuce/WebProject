@@ -22,6 +22,7 @@ namespace Business.Concrete
            _productDal = productDal;
         }
 
+        
         public IResult Add(Product product)
         {
             if (product.ProductName.Length < 2)
@@ -38,7 +39,7 @@ namespace Business.Concrete
             //iş kodları
             //authorization?
 
-            if (DateTime.Now.Hour ==22)
+            if (DateTime.Now.Hour == 23)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
